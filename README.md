@@ -12,4 +12,19 @@ In this project I use synthetic patient data to predict COVID-19 mortality. Simi
 **Reference:** Walonoski J, Klaus S, Granger E, Hall D, Gregorowicz A, Neyarapally G, Watson A, Eastman J. Synthea™ Novel coronavirus (COVID-19) model and synthetic data set. Intelligence-Based Medicine. 2020 Nov;1:100007. https://doi.org/10.1016/j.ibmed.2020.100007
 
 # EDA
-Initial EDA done in Jupyter notebook for ease of visualizing large tables: [covid_eda.ipynb](covid_eda.ipynb)
+## Initial Exploration
+Jupyter notebook (for ease of visualizing large tables): [covid_eda.ipynb](covid_eda.ipynb)
+
+Python script: [covid_eda.py](covid_eda.py)
+
+### Findings: 
+- patients.csv
+  - 124,150 unique patients
+  - 24,150 patients (19%) with a 'death date'
+- encounters.csv
+  - Of 24,150 patients with 'death date' 18,134 (75%) had a 'death certification' encounter
+  - Not all patients with 'death date' had an encounter related to COVID-19
+- conditions.csv
+  - Not all patients with 'death date' had a condition related to COVID-19
+
+So I found out the hard way that this data is not limited to patients admitted for COVID, or even patients who ever had a diagnosis of COVID. It is not COVID-19 mortality data, but data which can be used to predict COVID-19 mortality. So the next step is to filter specifically for COVID-19 data.
