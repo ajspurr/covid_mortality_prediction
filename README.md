@@ -1,5 +1,6 @@
 # COVID Mortality Prediction
 
+In this project I use synthetic patient data to predict COVID-19 mortality. Similar to real-world projects, the data is represented in a high-dimensional multi-table relational format. As such, plenty of time and effort is given to flattening and transforming the data such that it is optimized for binary classification machine learning algorithms to predict mortality. 
 
 **Data Source:** Synthea™ Novel coronavirus (COVID-19) model and synthetic data set
 
