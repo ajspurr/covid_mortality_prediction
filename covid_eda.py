@@ -110,6 +110,13 @@ patient_2_last_encounter[['START', 'STOP', 'ENCOUNTERCLASS', 'DESCRIPTION', 'REA
 patient2_covid_encounters = patient_2_encounters['REASONDESCRIPTION'].str.lower().str.contains('covid')
 patient2_covid_encounters.nunique()
 patient2_covid_encounters.value_counts()
+# No
 
+# Was there a covid 'condition' at some point?
+patient2_conditions_csv = pd.read_csv(data_dir+'conditions.csv', chunksize=10000)
+patient2_conditions_df = pd.concat((x.query("PATIENT == '2b902612-7f67-4043-af26-ecfd36ba89d9'") for x in patient2_conditions_csv), ignore_index=True)
+
+patient2_covid_conditions = patient2_conditions_df['DESCRIPTION'].str.lower().str.contains('covid')
+# No
 
 
