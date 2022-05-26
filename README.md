@@ -26,5 +26,7 @@ Python script: [covid_eda.py](covid_eda.py)
   - Not all patients with 'death date' had an encounter related to COVID-19
 - conditions.csv
   - Not all patients with 'death date' had a condition related to COVID-19
+- observations.csv
+  - Not all patients with 'death date' had an observation related to COVID-19
 
 So I found out the hard way that this data is not limited to patients admitted for COVID, or even patients who ever had a diagnosis of COVID. It is not COVID-19 mortality data, but data which can be used to predict COVID-19 mortality. So the next step is to filter specifically for COVID-19 data.
