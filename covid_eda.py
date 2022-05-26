@@ -120,3 +120,18 @@ patient2_covid_conditions = patient2_conditions_df['DESCRIPTION'].str.lower().st
 # No
 
 
+# Was there a covid 'observation' at some point?
+patient2_observations_csv = pd.read_csv(data_dir+'observations.csv', chunksize=10000)
+patient2_observations_df = pd.concat((x.query("PATIENT == '2b902612-7f67-4043-af26-ecfd36ba89d9'") for x in patient2_observations_csv), ignore_index=True)
+
+patient2_covid_observations = patient2_observations_df['DESCRIPTION'].str.lower().str.contains('cov')
+patient2_covid_observations.value_counts()
+
+patient2_observations_df['DESCRIPTION'].unique()
+# No
+
+
+
+
+
+
