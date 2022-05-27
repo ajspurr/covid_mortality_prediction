@@ -1,7 +1,6 @@
 import os
-import numpy as np
-import pandas as pd
 import datetime
+import pandas as pd
 
 cwd = os.getcwd()
 project_dir = 'D:\\GitHubProjects\\covid_mortality_prediction'
@@ -113,6 +112,7 @@ patient2_covid_encounters.value_counts()
 # No
 
 # Was there a covid 'condition' at some point?
+# The next two lines only read in data on the given patient
 patient2_conditions_csv = pd.read_csv(data_dir+'conditions.csv', chunksize=10000)
 patient2_conditions_df = pd.concat((x.query("PATIENT == '2b902612-7f67-4043-af26-ecfd36ba89d9'") for x in patient2_conditions_csv), ignore_index=True)
 
@@ -121,6 +121,7 @@ patient2_covid_conditions = patient2_conditions_df['DESCRIPTION'].str.lower().st
 
 
 # Was there a covid 'observation' at some point?
+# The next two lines only read in data on the given patient
 patient2_observations_csv = pd.read_csv(data_dir+'observations.csv', chunksize=10000)
 patient2_observations_df = pd.concat((x.query("PATIENT == '2b902612-7f67-4043-af26-ecfd36ba89d9'") for x in patient2_observations_csv), ignore_index=True)
 
