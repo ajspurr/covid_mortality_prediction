@@ -13,7 +13,7 @@ In this project I use synthetic patient data to predict COVID-19 mortality. Simi
 
 # EDA
 ## Entity Relationship Diagram
-I was unable to find additional information on the relationship between the tables, so I created a basic entity relationship diagram. For the sake of simplicity, I did not include every feature. The large box of tables on the left is meant to signify that each of those tables have exactly two foreign keys: 'PATIENT' and 'ENCOUNTER' which relate them to their respective tables. Clicking on the diagram displays the full size.
+I was unable to find additional information on the relationships between the tables, so I created a basic entity relationship diagram. For the sake of simplicity, I did not include every feature. The large box of tables on the left is meant to signify that each of those tables have exactly two foreign keys: 'PATIENT' and 'ENCOUNTER' which relate them to their respective tables. Clicking on the diagram displays the full size.
 
 <p align="center"><img src="/bin/EntityRelationshipDiagram.png" width="1000"/></p>
 
@@ -35,3 +35,16 @@ Python script: [covid_eda.py](covid_eda.py)
   - Not all patients with 'death date' had an observation related to COVID-19
 
 So this confirms what Synthea spelled out in their publication: this data is not limited to patients admitted for COVID, or even patients who ever had a diagnosis of COVID. It is not COVID-19 mortality data, but data which can be used to predict COVID-19 mortality. So the next step is to filter specifically for COVID-19 data.
+
+## Exploring patients with diagnosis of COVID
+Python script: [covid_eda.py](covid_eda3.py)
+### Findings: 
+- 88,166 patients have had a diagnosis of COVID-19 at some point (this is in agreements with Synthea's data summary above)
+- Of those patients, 3,641 have a death date
+- Of those with a death date, 3,601 have a 'Death Certfication' encounter with the follow 'Reason Description':
+
+<p align="center"><img src="/bin/covid_death_cert_reason_description.png" width="500"/></p>
+
+- Next steps:
+  - Explore the timing of the COVID-19 diagnosis in those patients who do not have COVID-19 in the death certification encounter
+  - Explore the patients who have a COVID-19 diagnosis who do not have death certification records
