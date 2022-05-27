@@ -39,7 +39,7 @@ So this confirms what Synthea spelled out in their publication: this data is not
 ## Exploring patients with diagnosis of COVID
 Python script: [covid_eda.py](covid_eda3.py)
 ### Findings: 
-- 88,166 patients have had a diagnosis of COVID-19 at some point (this is in agreements with Synthea's data summary above)
+- 88,166 patients (71%) have had a diagnosis of COVID-19 at some point (this is in agreements with Synthea's data summary above)
 - Of those patients, 3,641 have a death date
 - Of those with a death date, 3,601 have a 'Death Certfication' encounter with the follow 'Reason Description':
 
