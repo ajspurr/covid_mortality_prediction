@@ -37,7 +37,7 @@ Python script: [covid_eda.py](covid_eda.py)
 So this confirms what Synthea spelled out in their publication: this data is not limited to patients admitted for COVID, or even patients who ever had a diagnosis of COVID. It is not COVID-19 mortality data, but data which can be used to predict COVID-19 mortality. So the next step is to filter specifically for COVID-19 data.
 
 ## Exploring patients with diagnosis of COVID
-Python script: [covid_eda.py](covid_eda3.py)
+Python script: [covid_eda3.py](covid_eda3.py)
 ### Findings: 
 - 88,166 patients (71%) have had a diagnosis of COVID-19 at some point (this is in agreements with Synthea's data summary above)
 - Of those patients, 3,641 have a death date
